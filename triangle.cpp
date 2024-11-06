@@ -355,9 +355,7 @@
 #ifdef LINUX
 #include <fpu_control.h>
 #endif /* LINUX */
-#ifdef TRILIBRARY
 #include "triangle.h"
-#endif /* TRILIBRARY */
 
 namespace triangle {
 
@@ -15711,6 +15709,7 @@ struct triangulateio *vorout;
 #else /* not TRILIBRARY */
 
 #ifdef ANSI_DECLARATORS
+} // namespace triangle
 int main(int argc, char **argv)
 #else /* not ANSI_DECLARATORS */
 int main(argc, argv)
@@ -15721,6 +15720,7 @@ char **argv;
 #endif /* not TRILIBRARY */
 
 {
+  using namespace triangle;
   struct mesh m;
   struct behavior b;
   REAL *holearray;                                        /* Array of holes. */
@@ -16037,4 +16037,6 @@ char **argv;
 #endif /* not TRILIBRARY */
 }
 
-}
+#ifdef TRILIBRARY
+} // namespace triangle
+#endif /* not TRILIBRARY */
