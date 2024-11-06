@@ -210,11 +210,6 @@
 
 /* #define SINGLE */
 
-#ifdef SINGLE
-#define REAL float
-#else /* not SINGLE */
-#define REAL double
-#endif /* not SINGLE */
 
 /* If yours is not a Unix system, define the NO_TIMER compiler switch to     */
 /*   remove the Unix-specific timing code.                                   */
@@ -363,6 +358,8 @@
 #ifdef TRILIBRARY
 #include "triangle.h"
 #endif /* TRILIBRARY */
+
+namespace triangle {
 
 /* A few forward declarations.                                               */
 
@@ -16038,4 +16035,6 @@ char **argv;
 #ifndef TRILIBRARY
   return 0;
 #endif /* not TRILIBRARY */
+}
+
 }
