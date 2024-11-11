@@ -3282,7 +3282,7 @@ void internalerror()
 /*****************************************************************************/
 
 #ifdef ANSI_DECLARATORS
-void parsecommandline(int argc, char **argv, struct behavior *b)
+void parsecommandline(int argc, const char * const*argv, struct behavior *b)
 #else /* not ANSI_DECLARATORS */
 void parsecommandline(argc, argv, b)
 int argc;
@@ -15696,7 +15696,7 @@ struct behavior *b;
 #ifdef TRILIBRARY
 
 #ifdef ANSI_DECLARATORS
-void triangulate(char *triswitches, struct triangulateio *in,
+void triangulate(struct behavior &b, struct triangulateio *in,
                  struct triangulateio *out, struct triangulateio *vorout)
 #else /* not ANSI_DECLARATORS */
 void triangulate(triswitches, in, out, vorout)
@@ -15722,7 +15722,6 @@ char **argv;
 {
   using namespace triangle;
   struct mesh m;
-  struct behavior b;
   REAL *holearray;                                        /* Array of holes. */
   REAL *regionarray;   /* Array of regional attributes and area constraints. */
 #ifndef TRILIBRARY
@@ -15741,8 +15740,9 @@ char **argv;
 
   triangleinit(&m);
 #ifdef TRILIBRARY
-  parsecommandline(1, &triswitches, &b);
+  // we already have the beahavior as argument
 #else /* not TRILIBRARY */
+  struct behavior b;
   parsecommandline(argc, argv, &b);
 #endif /* not TRILIBRARY */
   m.steinerleft = b.steiner;
