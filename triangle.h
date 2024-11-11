@@ -283,8 +283,9 @@ struct triangulateio {
   int numberofedges;                                             /* Out only */
 };
 
-void triangulate(char *, struct triangulateio *, struct triangulateio *,
+void triangulate(struct behavior &b, struct triangulateio *, struct triangulateio *,
                  struct triangulateio *);
 void trifree(void *memptr);
+void parsecommandline(int argc, const char * const*argv, struct behavior *b);
 
 }
