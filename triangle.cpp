@@ -3203,7 +3203,7 @@ void internalerror()
 /*****************************************************************************/
 
 #ifdef ANSI_DECLARATORS
-void parsecommandline(int argc, const char * const*argv, struct behavior *b)
+void parsecommandline(int argc, char **argv, struct behavior *b)
 #else /* not ANSI_DECLARATORS */
 void parsecommandline(argc, argv, b)
 int argc;
