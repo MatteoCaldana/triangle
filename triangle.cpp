@@ -15662,6 +15662,13 @@ char **argv;
   triangleinit(&m);
 #ifdef TRILIBRARY
   // we already have the beahavior as argument
+  b.goodangle = cos(b.minangle * PI / 180.0);
+  if (b.goodangle == 1.0) {
+    b.offconstant = 0.0;
+  } else {
+    b.offconstant = 0.475 * sqrt((1.0 + b.goodangle) / (1.0 - b.goodangle));
+  }
+  b.goodangle *= b.goodangle;
 #else /* not TRILIBRARY */
   struct behavior b;
   parsecommandline(argc, argv, &b);

@@ -325,27 +325,44 @@ struct behavior {
 /*                                                                           */
 /* Read the instructions to find out the meaning of these switches.          */
 
-  int poly = -1;
-  int refine = -1;
-  int quality = -1;
-  int vararea = -1; 
-  int fixedarea = -1;
-  int usertest = -1;
-  int regionattrib, convex, weighted, jettison;
-  int firstnumber;
-  int edgesout, voronoi, neighbors, geomview;
-  int nobound, nopolywritten, nonodewritten, noelewritten, noiterationnum;
-  int noholes, noexact, conformdel;
-  int incremental, sweepline, dwyer;
-  int splitseg;
-  int docheck;
-  int quiet, verbose;
+  int poly = 0;
+  int refine = 0;
+  int quality = 0;
+  int vararea = 0; 
+  int fixedarea = 0;
+  int usertest = 0;
+  int regionattrib = 0;
+  int convex = 0;
+  int weighted = 0;
+  int jettison = 0;
+  int firstnumber = 1;
+  int edgesout = 0;
+  int voronoi = 0;
+  int neighbors = 0;
+  int geomview = 0;
+  int nobound = 0;
+  int nopolywritten = 0;
+  int nonodewritten = 0;
+  int noelewritten = 0;
+  int noiterationnum = 0;
+  int noholes = 0;
+  int noexact = 0;
+  int conformdel = 0;
+  int incremental = 0;
+  int sweepline = 0;
+  int dwyer = 1;
+  int splitseg = 0;
+  int docheck = 0;
+  int quiet = 0;
+  int verbose = 0;
   int usesegments;
-  int order;
-  int nobisect;
-  int steiner;
-  REAL minangle, goodangle, offconstant;
-  REAL maxarea;
+  int order = 1;
+  int nobisect = 0; 
+  int steiner = -1;
+  REAL minangle = 20.0;
+  REAL goodangle = NAN;
+  REAL offconstant = 0.0;
+  REAL maxarea = -1.0;
 
 /* Variables for file names.                                                 */
 
