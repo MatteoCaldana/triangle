@@ -15662,7 +15662,7 @@ char **argv;
   triangleinit(&m);
 #ifdef TRILIBRARY
   // we already have the beahavior as argument
-  b->usesegments = b->poly || b->refine || b->quality || b->convex;
+  b.usesegments = b.poly || b.refine || b.quality || b.convex;
   b.goodangle = cos(b.minangle * PI / 180.0);
   if (b.goodangle == 1.0) {
     b.offconstant = 0.0;
