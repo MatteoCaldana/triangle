@@ -325,7 +325,12 @@ struct behavior {
 /*                                                                           */
 /* Read the instructions to find out the meaning of these switches.          */
 
-  int poly, refine, quality, vararea, fixedarea, usertest;
+  int poly = -1;
+  int refine = -1;
+  int quality = -1;
+  int vararea = -1; 
+  int fixedarea = -1;
+  int usertest = -1;
   int regionattrib, convex, weighted, jettison;
   int firstnumber;
   int edgesout, voronoi, neighbors, geomview;
